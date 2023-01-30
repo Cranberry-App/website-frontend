@@ -1,0 +1,52 @@
+@use 'style';
+
+// Brand color variables
+$github-dark: #333;
+$github-light: #f5f5f5;
+
+body {
+    background-color: style.$background-color;
+}
+
+h2 {
+    color: style.$text-color;
+    font-family: style.$inter;
+    margin-left: 30%;
+}
+
+#login-methods {
+    margin-left: 30%;
+    background-color: style.$background-color-light;
+    padding: 20px;
+    border-radius: 25px;
+    width: 50%;
+
+    button {
+        margin: 10px;
+        padding: 10px 20px 10px 20px;
+        border-radius: 10px;
+        font-family: style.$ubuntu;
+        font-size: 1.5em;
+        font-weight: 300;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+
+        &:hover {
+            cursor: pointer;
+            filter: brightness(1.5);
+        }
+
+        &#github-btn {
+            background-color: $github-dark;
+            color: $github-light;
+        }
+
+        p {
+            margin: 0;
+            margin-left: 10px;
+        }
+    }
+}

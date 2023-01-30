@@ -1,3 +1,3 @@
 if (!localStorage.getItem('token')) {
-  window.location.href = '/src/login.html';
+    window.location.href = '/src/login.html';
 }
