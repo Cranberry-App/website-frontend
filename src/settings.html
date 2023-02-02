@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Meta tags -->
+        <meta charset="utf-8">
+
+        <!-- Style imports -->
+        <link rel="stylesheet" href="/dist/css/settings.css">
+
+        <!-- Script imports -->
+        <script src="/dist/js/constants.js"></script>
+        <script src="/dist/js/settings.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+        <!-- Additional stuff -->
+        <title>Cranberry</title>
+    </head>
+    <body>
+        <h1>Your profile settings</h1>
+        <div id="inputs">
+            <input type="text" id="usernameInput" placeholder="Username">
+            <input type="text" id="emailInput" readonly>
+            <h2>Your avatar:</h2>
+            <div id="profile-image">
+                <img src="https://gravatar.com/avatar/1?s=400&d=mp">
+                <div class="buttons">
+                    <button id="shuffle-image"><i data-feather="refresh-cw"></i><p>Shuffle image</p></button>
+                    <select name="type" id="avatarType">
+                        <option value="marble" selected>Marble</option>
+                        <option value="beam">Beam</option>
+                        <option value="pixel">Pixel</option>
+                        <option value="sunset">Sunset</option>
+                        <option value="ring">Ring</option>
+                        <option value="bauhaus">Bauhaus</option>
+                    </select>
+                </div>
+            </div>
+            <div id="account-buttons">
+                <button id="save-button"><i data-feather="save"></i><p>Save changes</p></button>
+                <button id="delete-button"><p><i data-feather="trash-2"></i>Delete account</p></button>
+            </div>
+        </div>
+    </body>
+</html>

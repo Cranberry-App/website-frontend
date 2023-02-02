@@ -1,0 +1,24 @@
+@use 'style';
+
+h1, h2 {
+    color: style.$text-color;
+    font-family: style.$inter;
+}
+
+p {
+    color: style.$text-color;
+    font-family: style.$ubuntu;
+}
+
+#username {
+    color: style.$text-color-light;
+    font-family: style.$ubuntu;
+}
+
+h2 {
+    margin-top: 5%;
+}
+
+body > * {
+    margin-left: 30%;
+}

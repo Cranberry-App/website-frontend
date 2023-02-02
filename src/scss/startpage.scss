@@ -1,0 +1,54 @@
+@use 'style';
+
+#profile {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    img {
+        width: 30%;
+        height: 30%;
+        border-radius: 50%;
+        margin: 10px;
+        cursor: pointer;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        background-color: style.$background-color-light;
+        margin-right: 10px;
+        
+        .menu-item {
+            border-bottom: solid 5px style.$background-color;
+            color: style.$text-color;
+            font-family: style.$ubuntu;
+            padding-left: 20px;
+            padding-right: 10px;
+            text-align: right;
+            display: flex;
+            align-items: center;
+
+            svg {
+                margin-right: 5px;
+            }
+
+            &:hover {
+                background-color: style.$background-color-semi-light;
+                cursor: pointer;
+            }
+        }
+
+        &.hidden {
+            opacity: 0;
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+    color: style.$text-color;
+}

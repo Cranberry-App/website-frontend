@@ -1,0 +1,119 @@
+@use 'style';
+
+h1, h2 {
+    color: style.$text-color;
+    font-family: style.$inter;
+}
+
+p {
+    color: style.$text-color;
+    font-family: style.$ubuntu;
+}
+
+body > * {
+    margin-left: 30%;
+}
+
+#inputs {
+    display: flex;
+    flex-direction: column;
+
+    input {
+        font-size: 1.25em;
+        background-color: style.$background-color-light;
+        outline: none;
+        border: solid 1px style.$background-color;
+        margin-bottom: 30px;
+        padding: 10px;
+        width: 30%;
+        border-radius: 5px;
+        color: style.$text-color;
+
+        &#emailInput {
+            filter: grayscale(30%);
+            cursor: not-allowed;
+        }
+
+        &::placeholder {
+            color: style.$text-color;
+        }
+    }
+
+    #profile-image {
+        display: flex;
+        flex-direction: column;
+
+        img {
+            width: 20%;
+            height: 20%;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            margin-top: 10px;
+
+            button, select {
+                background-color: style.$background-color-light;
+                outline: none;
+                border: solid 1px style.$background-color;
+                border-radius: 5px;
+                color: style.$text-color;
+                font-size: 1.25em;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: 0.2s;
+                flex-direction: row;
+                padding-right: 10px;
+                margin-right: 10px;
+                font-family: style.$ubuntu;
+
+                svg {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+
+    #account-buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 20px;
+
+        button {
+            outline: none;
+            border: solid 1px style.$background-color;
+            border-radius: 5px;
+            color: style.$text-color;
+            font-size: 1.25em;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.2s;
+            flex-direction: row;
+            padding-right: 10px;
+            margin-right: 10px;
+            font-family: style.$ubuntu;
+            height: 65px;
+
+            &#save-button {
+                background-color: blue;
+            }
+
+            &#delete-button {
+                background-color: red;
+            }
+        }
+
+        svg {
+            margin-right: 10px;
+        }
+    }
+}

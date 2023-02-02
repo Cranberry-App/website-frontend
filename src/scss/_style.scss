@@ -2,9 +2,15 @@
 
 // Colors:
 $background-color: #aa0022;
+$background-color-semi-light: #ff3366;
 $background-color-light: #ff0033;
 $text-color: #ffe6e6;
+$text-color-light: #ffffff;
 
 // Fonts:
 $inter: 'Inter', sans-serif;
 $ubuntu: 'Ubuntu', sans-serif;
+
+body {
+    background-color: $background-color;
+}
