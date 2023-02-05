@@ -2,7 +2,7 @@
 feather.replace();
 
 if (!localStorage.getItem('token')) {
-    window.location.href = '/src/login.html';
+    //window.location.href = '/src/login.html';
 }
 
 fetch(`${apiBase}/user?id=me`, {
@@ -19,7 +19,7 @@ fetch(`${apiBase}/user?id=me`, {
         });
     } else {
         localStorage.removeItem('token');
-        window.location.href = "/src/login.html";
+        //window.location.href = "/src/login.html";
     }
 });
 

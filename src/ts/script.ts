@@ -1,5 +1,5 @@
 if (!localStorage.getItem('token')) {
-    window.location.href = '/src/login.html';
+    //window.location.href = '/src/login.html';
 }
 
 document.querySelector('#profile img').addEventListener('click', () => {
@@ -18,7 +18,7 @@ fetch(`${apiBase}/user?id=me`, {
         });
     } else {
         localStorage.removeItem('token');
-        window.location.href = "/src/login.html";
+        //window.location.href = "/src/login.html";
     }
 });
 

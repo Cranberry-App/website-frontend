@@ -1,8 +1,7 @@
-let searchParams = new URLSearchParams(window.location.search);
-let token = searchParams.get("token");
+let token = localStorage.getItem("token");
 
 if (!token) {
-    window.location.href = "login.html";
+    //window.location.href = "login.html";
 } else {
     fetch(`${apiBase}/user?id=me`, {
         method: "GET",
@@ -16,7 +15,7 @@ if (!token) {
                 localStorage.setItem("token", token);
             });
         } else {
-            window.location.href = "login.html";
+            //window.location.href = "login.html";
         }
     })
 }

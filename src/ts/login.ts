@@ -1,9 +1,5 @@
 document.querySelector('#github-btn').addEventListener('click', () => {
-    let appInfo = {
-        client_id: "e7c8ac97b628ad88bb6a",
-        redirect_uri: "http://localhost:3000/oauth?app=github",
-        scope: "read:user"
-    }
+    let appInfo = oauthAppInfo.github;
 
     const params  = new URLSearchParams();
     params.append('client_id', appInfo.client_id);
