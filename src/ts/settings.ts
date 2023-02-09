@@ -2,7 +2,7 @@
 feather.replace();
 
 if (!localStorage.getItem('token')) {
-    //window.location.href = '/src/login.html';
+    window.location.href = '/src/login.html';
 }
 
 fetch(`${apiBase}/user?id=me`, {
@@ -19,13 +19,12 @@ fetch(`${apiBase}/user?id=me`, {
         });
     } else {
         localStorage.removeItem('token');
-        //window.location.href = "/src/login.html";
+        window.location.href = "/src/login.html";
     }
 });
 
 document.querySelector('#shuffle-image').addEventListener('click', () => {
-    let randomNum = Math.floor(Math.random() * 1000000);
-    let newAvatarUrl = `https://source.boringavatars.com/${(document.querySelector('#avatarType') as HTMLSelectElement).value}/400/${randomNum}`;
+    let newAvatarUrl = `https://source.boringavatars.com/${(document.querySelector('#avatarType') as HTMLSelectElement).value}/400`;
     (document.querySelector('#profile-image img') as HTMLImageElement).src = newAvatarUrl;
 });
 
@@ -44,7 +43,26 @@ document.querySelector('#save-button').addEventListener('click', () => {
         if (res.status === 200) {
             (document.querySelector('#profile-image img') as HTMLImageElement).src = data.avatarUrl;
             (document.querySelector('#usernameInput') as HTMLInputElement).value = data.name;
-            (document.querySelector('#emailInput') as HTMLInputElement).value = data.email;
+
+            new CustomNotification("user-check", "Profile info saved", 3000);
+        } else {
+            alert(data.error);
+        }
+    });
+});
+
+document.querySelector('#delete-button').addEventListener('click', () => {
+    fetch(`${apiBase}/user`, {
+        method: 'DELETE',
+        headers: {
+            "Authorization": localStorage.getItem('token')
+        },
+        body: "null"
+    }).then(async res => {
+        const data = await res.json();
+        if (res.status === 200) {
+            localStorage.removeItem('token');
+            window.location.href = "/src/login.html";
         } else {
             alert(data.error);
         }

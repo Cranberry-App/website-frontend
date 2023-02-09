@@ -1,5 +1,9 @@
 if (!localStorage.getItem('token')) {
-    //window.location.href = '/src/login.html';
+    window.location.href = '/src/login.html';
+}
+
+if(new URLSearchParams(window.location.search).get("fromLogin")) {
+    new CustomNotification("log-in", "Logged in", 2000);
 }
 
 document.querySelector('#profile img').addEventListener('click', () => {
@@ -18,7 +22,7 @@ fetch(`${apiBase}/user?id=me`, {
         });
     } else {
         localStorage.removeItem('token');
-        //window.location.href = "/src/login.html";
+        window.location.href = "/src/login.html";
     }
 });
 

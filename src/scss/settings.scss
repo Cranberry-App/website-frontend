@@ -10,7 +10,7 @@ p {
     font-family: style.$ubuntu;
 }
 
-body > * {
+body > *:not(#notification) {
     margin-left: 30%;
 }
 

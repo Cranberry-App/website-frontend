@@ -14,3 +14,34 @@ $ubuntu: 'Ubuntu', sans-serif;
 body {
     background-color: $background-color;
 }
+
+#notification {
+    position: absolute;
+    width: min-content;
+    height: min-content;
+    background-color: darkslategray;
+    bottom: 10px;
+    left: -1000px;
+    display: flex;
+    align-items: center;
+    padding-right: 100px;
+    padding-left: 10px;
+    transition: 0.5s;
+    font-family: $inter;
+
+    p {
+        color: white;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+
+
+        svg {
+            margin-right: 10px;
+        }
+    }
+
+    &.show {
+        left: 10px;
+    }
+}
