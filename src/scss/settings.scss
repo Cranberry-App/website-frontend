@@ -117,3 +117,19 @@ body > *:not(#notification) {
         }
     }
 }
+
+#back {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 1.2em;
+    border-bottom: solid white 2px;
+    width: max-content;
+    margin-top: 30px;
+    cursor: pointer;
+    user-select: none;
+    
+    * {
+        margin: 0;
+    }
+}

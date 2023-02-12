@@ -2,7 +2,7 @@
 feather.replace();
 
 if (!localStorage.getItem('token')) {
-    window.location.href = '/src/login.html';
+    window.location.href = '/src/login.html?error=You are not logged in';
 }
 
 fetch(`${apiBase}/user?id=me`, {
@@ -19,12 +19,13 @@ fetch(`${apiBase}/user?id=me`, {
         });
     } else {
         localStorage.removeItem('token');
-        window.location.href = "/src/login.html";
+        window.location.href = "/src/login.html?error=An error occurred";
     }
 });
 
 document.querySelector('#shuffle-image').addEventListener('click', () => {
-    let newAvatarUrl = `https://source.boringavatars.com/${(document.querySelector('#avatarType') as HTMLSelectElement).value}/400`;
+    let random = Math.floor(Math.random() * 1000000);
+    let newAvatarUrl = `https://source.boringavatars.com/${(document.querySelector('#avatarType') as HTMLSelectElement).value}/400/${random}`;
     (document.querySelector('#profile-image img') as HTMLImageElement).src = newAvatarUrl;
 });
 

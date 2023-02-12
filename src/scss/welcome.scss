@@ -22,3 +22,28 @@ h2 {
 body > * {
     margin-left: 30%;
 }
+
+ul {
+    li {
+        font-size: 1.3em;
+        margin-bottom: 10px;
+
+        &:nth-child(1)::marker {
+            content: "🏠";
+        }
+
+        &:nth-child(2)::marker {
+            content: "📝";
+        }
+
+        &:nth-child(3)::marker {
+            content: "📚";
+        }
+
+        a {
+            text-decoration: none;
+            color: style.$text-color;
+            font-family: style.$inter;
+        }
+    }
+}

@@ -20,14 +20,24 @@
         <div id="profile">
             <img src="https://via.placeholder.com/128">
             <div class="menu hidden">
-                <div class="menu-item">
+                <div class="menu-item" onclick="window.location.href = 'settings.html'">
                     <i data-feather="settings"></i>
                     <p><a href="settings.html">Settings</a></p>
                 </div>
-                <div class="menu-item">
+                <div class="menu-item" onclick="logout()">
                     <i data-feather="log-out"></i>
                     <p>Log out</p>
                 </div>
+            </div>
+        </div>
+        <ul id="channels">
+        </ul>
+        <div id="chat">
+            <div id="message-container">
+            </div>
+            <div class="inputs">
+                <input type="text" placeholder="Message" id="message-input">
+                <button id="send-message"><i data-feather="send"></i><span>Send</span></button>
             </div>
         </div>
     </body>

@@ -4,7 +4,7 @@ const oauthCode: string = searchParams.get("code");
 const oauthApp: string = searchParams.get("app");
 
 if (!oauthCode || !oauthApp) {
-    window.location.href = "login.html";
+    window.location.href = "login.html?error=Invalid OAuth request";
 }
 
 fetch(`${apiBase}/oauth`, {
@@ -23,7 +23,7 @@ fetch(`${apiBase}/oauth`, {
             window.location.href = res.status == 201 ? "welcome.html" : "index.html?fromLogin=true";
         });
     } else {
-        window.location.href = "login.html";
+        window.location.href = "login.html?error=An error occurred";
     }
 
     console.log(res)

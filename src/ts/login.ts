@@ -11,5 +11,10 @@ document.querySelector('#github-btn').addEventListener('click', () => {
     window.location.href = url.href;
 });
 
+let loginSearchParams: URLSearchParams = new URLSearchParams(window.location.search);
+if (loginSearchParams.get("error")) {
+    new CustomNotification("alert-triangle", loginSearchParams.get("error"), 2000);
+}
+
 // @ts-ignore
 feather.replace();
