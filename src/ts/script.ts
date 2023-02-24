@@ -55,7 +55,7 @@ document.querySelector('#message-input').addEventListener('keypress', (event: Ke
 });
 
 document.querySelector('#send-message').addEventListener('click', () => {
-    if ((document.querySelector('#message-input') as HTMLInputElement).value == "") return customAlert("You can't send an empty message", "Empty message", "alert-triangle");
+    if ((document.querySelector('#message-input') as HTMLInputElement).value == "") return new CustomAlert("You can't send an empty message", "Empty message", "alert-triangle");
     createMessage({profileImage: "https://via.placeholder.com/128", name: "Test"}, (document.querySelector('#message-input') as HTMLInputElement).value, "by", Date.now());
     (document.querySelector('#message-input') as HTMLInputElement).value = "";
 });
